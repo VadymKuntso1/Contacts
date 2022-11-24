@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home' %}">Список</a>
+      <a class="navbar-brand" href="{% url 'new' %}">Додати</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+    </div>
+  </div>
+</nav>
+
+<div class="row ">
+  <img class="cardimg card-img-top " src="{{record.photo}}" alt="Card image cap">
+  <div class="row contentshow">
+      <div class="col-md-6">
+    <div class="card-body">
+    <h5 class="card-title">{{record.name}} {{record.seccond_name}} {{record.third_name}}</h5>
+    <p class="card-text">{{record.number}}</p>
+      </div>
+          </div>
+      <div class="col-md-6 d-flex justify-content-around">
+
+          <img class="call" src="https://cdn-icons-png.flaticon.com/512/3059/3059606.png" alt="">
+
+          <a href="{% url 'update' record.id record.name record.seccond_name %}">
+            <img class="call" src="https://cdn-icons-png.flaticon.com/512/8930/8930402.png" alt="update">
+          </a>
+
+          <a href="{% url 'remove' record.id record.name  %}">
+              <img class="call" src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" alt="remove">
+          </a>
+
+    </div>
+  </div>
+
+
+</div>
+</div>
+{{error}}
+</body>
+</html>

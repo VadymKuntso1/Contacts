@@ -1,0 +1,24 @@
+.card-img-top{
+    height:300px !important;
+    object-fit: cover;
+}
+.call{
+    width:100px;
+    height:auto;
+    transition:0.3s;
+}
+.call:hover{
+opacity: 0.5;
+transition:0.3s;
+cursor:pointer;
+}
+.contentshow{
+    margin-top:50px;
+}
+
+.addconent{
+margin:10% !important;
+}
+a > {
+text-decoration: none !important;
+}
